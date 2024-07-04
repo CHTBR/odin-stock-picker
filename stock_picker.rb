@@ -11,6 +11,12 @@ def stock_picker(stock_arr)
     else
       price = 0
     end
-    
+
+    if price > highest_price[:value]
+      highest_price[:value] = price
+      highest_price[:buy_day] = lowest_stock[:day]
+      highest_price[:sell_day] = highest_stock[:day]
+    end
+
   end
 end
